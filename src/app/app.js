@@ -8,12 +8,12 @@ angular.module( 'app', [ 'angularMoment', 'pusher-angular' ] )
         var vm = this;
         vm.newQuestion = '';
 
-        $http.get( 'http://faq-api.kristine.space/questions' ).then( function ( results ) {
+        $http.get( 'http://faq.flugg.space/questions' ).then( function ( results ) {
             vm.questions = results.data;
         } );
 
         vm.submit = function () {
-            $http.post( 'http://faq-api.kristine.space/questions', {
+            $http.post( 'http://faq.flugg.space/questions', {
                 text: vm.newQuestion
             } ).then( function ( results ) {
                 vm.newQuestion = '';
