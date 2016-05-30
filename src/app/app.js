@@ -8,12 +8,12 @@ angular.module( 'app', [ 'angularMoment', 'pusher-angular' ] )
         var vm = this;
         vm.newQuestion = '';
 
-        $http.get( 'http://westerdals-faq-api.dev/questions' ).then( function ( results ) {
+        $http.get( 'http://faq-api.kristine.space/questions' ).then( function ( results ) {
             vm.questions = results.data;
         } );
 
         vm.submit = function () {
-            $http.post( 'http://westerdals-faq-api.dev/questions', {
+            $http.post( 'http://faq-api.kristine.space/questions', {
                 text: vm.newQuestion
             } ).then( function ( results ) {
                 vm.newQuestion = '';
@@ -28,5 +28,21 @@ angular.module( 'app', [ 'angularMoment', 'pusher-angular' ] )
 
         channel.bind( 'new-question', function ( data ) {
             vm.questions.push( data );
+        } );
+
+        channel.bind( 'edit-question', function ( data ) {
+            for ( var i = 0; i < vm.questions.length; i ++ ) {
+                if ( vm.questions[ i ].id === data.id ) {
+                    vm.questions[ i ] = data;
+                }
+            }
+        } );
+
+        channel.bind( 'delete-question', function ( data ) {
+            for ( var i = 0; i < vm.questions.length; i ++ ) {
+                if ( vm.questions[ i ].id === data.id ) {
+                    vm.questions.splice( i, 1 );
+                }
+            }
         } );
     } );
