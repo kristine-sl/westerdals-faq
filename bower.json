@@ -1,0 +1,27 @@
+{
+  "name": "westerdals-faq",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Flugger <flugged@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.6",
+    "angular-moment": "~0.10.3",
+    "pusher-angular": "~0.1.9",
+    "pusher-websocket-iso": "pusher#~3.1.0"
+  },
+  "resolutions": {
+    "angular": "~1.5.6"
+  }
+}

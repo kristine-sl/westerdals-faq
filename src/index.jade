@@ -1,0 +1,26 @@
+doctype html
+html( ng-app = 'app' )
+    head
+        title Westerdals FAQ
+    link( rel = 'stylesheet' href = 'app.css' )
+    link( rel = 'stylesheet' href = '//fonts.googleapis.com/css?family=Open+Sans:400,100,200,300,500,600,700,800,900' )
+    body( ng-controller = 'QuestionsController as questionsCtrl' )
+        main
+            header
+                h1
+                    .small Velkommen til
+                    span Puggekveld
+                p.Card.Card--info Denne siden kommer til å monitoreres under puggekvelden. Alle spørsmål som blir stilt under blir tatt opp løpende og besvart. Alle spørsmål er anonyme.
+
+            form( ng-submit = 'questionsCtrl.submit()' )
+                textarea( ng-model = 'questionsCtrl.newQuestion' placeholder = 'Skriv inn ditt spørsmål...' )
+                button( type = 'submit' ) Send inn
+
+            .Card-wrapper( ng-repeat = "question in questionsCtrl.questions | orderBy: '-created_at' " )
+                span.Card-timestamp( am-time-ago = 'question.created_at' )
+                .Card {{ question.text }}
+                .Card--answer( ng-show = 'question.answer' ) {{ question.answer }}
+
+        footer (c) Copyright 2016
+
+        script( src = 'app.js' )

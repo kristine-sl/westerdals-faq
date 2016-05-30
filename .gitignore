@@ -1,0 +1,8 @@
+/.idea
+/bower_components
+/node_modules
+.DS_STORE
+.*.swo
+.*.swp
+.swo
+.swp
