@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: map-get( $colors, 'background' );
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    line-height: 1.75;
+    margin: 0;
+}
+
+main {
+    // max-width: 800px;
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    
+}

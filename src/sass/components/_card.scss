@@ -1,0 +1,81 @@
+.Card {
+    color: map-get( $colors, 'text-light' );
+    font-size: map-get( $text, 'size');
+    font-weight: 600;
+    text-align: center; 
+    position: relative;
+    z-index: 2;
+
+    &-container {
+        max-width: 1200px; 
+        text-align: center; 
+    }
+
+    &-wrapper { 
+        width: 350px; 
+        display: inline-block; 
+        margin: map-get( $layout, 'spacing-large' ); 
+        border: 3px solid map-get( $colors, 'primary' ); 
+        padding: map-get( $layout, 'spacing-large' ); 
+        border-radius: map-get( $layout, 'border-radius' ); 
+        background: map-get( $colors, 'card' ); 
+    }
+
+    &-timestamp {
+        color: map-get( $colors, 'secondary' ); 
+        display: block;
+        text-align: right;
+        margin-bottom: map-get( $layout, 'spacing' );
+        font-size: map-get( $text, 'size' ); 
+    }
+
+    &--info {
+        width: 50%;
+        background: map-get( $colors, 'info' );
+        color: map-get( $colors, 'text-light'); 
+        font-size: map-get( $text, 'size-small' );
+        font-weight: 400;
+        padding: map-get( $layout, 'spacing-large' ) map-get( $layout, 'spacing-large' );
+        border-radius: map-get( $layout, 'border-radius' ); 
+        text-align: left; 
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            // border-width: 16px 24px 16px 0;
+            border-width: 16px 24px 16px 0;
+            border-color: transparent map-get( $colors, 'info' ) transparent transparent;
+            left: -16px;
+            top: 50%;
+            margin-top: -16px;
+            position: absolute;
+        }
+    }
+
+    &--answer {
+        background: map-get( $colors, 'card-light' ); 
+        margin: -(map-get( $layout, 'spacing-large' )); 
+        margin-top: map-get( $layout, 'spacing-large' );
+        padding: map-get( $layout, 'spacing-large' );
+        z-index: 1;
+        color: map-get( $colors, 'text-dark' );
+        font-weight: 400;
+        font-size: map-get( $text, 'size' ); 
+        text-align: left; 
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 12px 16px 12px;
+            border-color: transparent transparent white transparent;
+            left: 5%;
+            top: -16px;
+            position: absolute;
+        }
+    }
+}

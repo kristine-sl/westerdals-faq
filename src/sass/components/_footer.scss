@@ -1,0 +1,11 @@
+footer {
+    color: map-get( $colors, 'primary' );
+    text-align: center;
+    color: map-get( $colors, 'text-light' );
+    font-size: map-get( $text, 'size' );
+    font-weight: 700;
+    background: map-get( $colors, 'primary-dark' );
+    width: 100%;
+    padding: map-get( $layout, 'spacing-large') 0;
+    margin-top: map-get( $layout, 'spacing-large');
+}
