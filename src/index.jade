@@ -24,6 +24,16 @@ html( ng-app = 'app' )
                     .Card {{ question.text }}
                     .Card--answer ( ng-show = 'question.answer' ) {{ question.answer }}
 
-        footer (c) Copyright 2016
+        footer
+            .Footer-section
+                p Dette er et verktøy laget for Westerdals Oslo ACT, av Kristine Sundt Lorentzen. 
+                p (c) Copyright 2016 
+            .Footer-section 
+                h3 Github 
+                p 
+                    a( href = 'https://github.com/kristine-sl/westerdals-faq' ) Westerdals-faq
+                p 
+                    a( href = 'https://github.com/kristine-sl/westerdals-faq-api' ) Westerdals-faq-api
 
         script( src = 'app.js' )
+

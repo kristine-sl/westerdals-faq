@@ -1,7 +1,7 @@
 .Card {
     color: map-get( $colors, 'text-light' );
     font-size: map-get( $text, 'size');
-    font-weight: 600;
+    font-weight: map-get( $text, 'weight-heavy');
     text-align: center; 
     position: relative;
     z-index: 2;
@@ -34,8 +34,8 @@
         background: map-get( $colors, 'info' );
         color: map-get( $colors, 'text-light'); 
         font-size: map-get( $text, 'size-small' );
-        font-weight: 400;
-        padding: map-get( $layout, 'spacing-large' ) map-get( $layout, 'spacing-large' );
+        font-weight: map-get( $text, 'weight' );
+        padding: map-get( $layout, 'spacing-large' );
         border-radius: map-get( $layout, 'border-radius' ); 
         text-align: left; 
 
@@ -61,7 +61,7 @@
         padding: map-get( $layout, 'spacing-large' );
         z-index: 1;
         color: map-get( $colors, 'text-dark' );
-        font-weight: 400;
+        font-weight: map-get( $text, 'weight' );
         font-size: map-get( $text, 'size' ); 
         text-align: left; 
         position: relative;

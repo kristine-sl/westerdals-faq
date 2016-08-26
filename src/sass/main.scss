@@ -1,4 +1,6 @@
+// Must be imported first because it is used by the other sass files 
 @import 'settings';
+
 @import 'base'; 
 @import 'components'; 
 @import 'text';

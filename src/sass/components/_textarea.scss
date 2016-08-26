@@ -9,7 +9,7 @@ textarea {
     line-height: 1.75;
     padding: map-get( $layout, 'spacing-large' );
     font-size: map-get( $text, 'size' );
-    font-weight: 400;
+    font-weight: map-get( $text, 'weight' );
     margin: map-get( $layout, 'spacing' ); 
 
     &:focus {
