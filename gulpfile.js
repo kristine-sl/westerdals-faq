@@ -51,7 +51,7 @@ require( 'mango-gulp' )( {
      * Sass configuration.
      */
     sass: {
-        source: 'sass',
+        source: 'styles',
         minify: true,
         revise: true
     },

@@ -2,38 +2,32 @@ doctype html
 html( ng-app = 'app' )
     head
         title Westerdals FAQ
-    link( rel = 'stylesheet' href = 'app.css' )
-    link( rel = 'stylesheet' href = '//fonts.googleapis.com/css?family=Open+Sans:400,100,200,300,500,600,700,800,900' )
+        link( rel = 'stylesheet' href = 'main.css' )
+        link( rel = 'stylesheet' href = '//fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900' )
+        base( href = '/' )
     body( ng-controller = 'QuestionsController as questionsCtrl' )
-        main
+    
+        header
+            a( href = '' ) < Gå tilbake
             .Header-wrapper
-                header
-                    h1
-                        .small Jeg har et lite spørsmål om.. 
-                        span Objektorientert programmering 1
-                    p.Card.Card--info Dette er en side hvor du kan stille spørsmål under forelesningen. Alle spørsmål som stilles på denne siden er anonyme, og modereres av foreleser. Foreleser velger selv hvilke svar som skal besvares, og står fritt til å slette upassende spørsmål.
-            .Navigation
+                h1
+                    .small Jeg har et lite spørsmål om.. 
+                    span Objektorientert programmering 1
+                p.Card.Card--info Dette er en side hvor du kan stille spørsmål under forelesningen. Alle spørsmål som stilles på denne siden er anonyme, og modereres av foreleser. Foreleser velger selv hvilke svar som skal besvares, og står fritt til å slette upassende spørsmål.
+            .Login 
+                a( href = '' ) Logg inn
+        .Navigation
 
-            form( ng-submit = 'questionsCtrl.submit()' )
-                textarea( ng-model = 'questionsCtrl.newQuestion' placeholder = 'Skriv inn ditt spørsmål...' )
-                button( type = 'submit' ) Send inn
-
-            .Card-container
-                .Card-wrapper( ng-repeat = "question in questionsCtrl.questions | orderBy: '-created_at' " )
-                    span.Card-timestamp( am-time-ago = 'question.created_at' )
-                    .Card {{ question.text }}
-                    .Card--answer ( ng-show = 'question.answer' ) {{ question.answer }}
+        main( ui-view )
 
         footer
             .Footer-section
-                p Dette er et verktøy laget for Westerdals Oslo ACT, av Kristine Sundt Lorentzen. 
+                h3 Info 
+                p Dette er et verktøy laget for Westerdals Oslo ACT, av Alexander Tømmerås og Kristine Sundt Lorentzen. 
                 p (c) Copyright 2016 
             .Footer-section 
                 h3 Github 
-                p 
-                    a( href = 'https://github.com/kristine-sl/westerdals-faq' ) Westerdals-faq
-                p 
-                    a( href = 'https://github.com/kristine-sl/westerdals-faq-api' ) Westerdals-faq-api
+                a( href = 'https://github.com/kristine-sl/westerdals-faq' ) Westerdals-faq
+                a( href = 'https://github.com/kristine-sl/westerdals-faq-api' ) Westerdals-faq-api
 
         script( src = 'app.js' )
-

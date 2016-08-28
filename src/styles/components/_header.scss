@@ -1,0 +1,16 @@
+.Header-wrapper {
+    max-width: 800px; 
+    margin-bottom: map-get( $layout, 'spacing-large');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    display: flex; 
+    justify-content: center; 
+    background: map-get( $colors, 'primary' ); 
+    padding: map-get( $layout, 'spacing-large') 0 0px 0;
+    width: 100%; 
+    border-bottom: map-get( $layout, 'spacing') solid map-get( $colors, 'highlight' ); 
+}

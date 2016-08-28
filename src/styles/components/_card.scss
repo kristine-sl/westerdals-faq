@@ -7,30 +7,42 @@
     z-index: 2;
 
     &-container {
-        max-width: 1200px; 
+        max-width: map-get( $layout, 'content-max-width' ); 
         text-align: center; 
     }
 
     &-wrapper { 
-        width: 350px; 
-        display: inline-block; 
         margin: map-get( $layout, 'spacing-large' ); 
         border: 3px solid map-get( $colors, 'primary' ); 
         padding: map-get( $layout, 'spacing-large' ); 
         border-radius: map-get( $layout, 'border-radius' ); 
         background: map-get( $colors, 'card' ); 
+        width: 350px; 
+        display: inline-block; 
+    }
+
+    &-header {
+        margin-bottom: map-get( $layout, 'spacing' ); 
+        display: flex; 
+        line-height: 1; 
+    }
+
+    &-remove {
+        color: map-get( $colors, 'link' ); 
+        font-size: map-get( $text, 'size' ); 
+        text-align: right; 
+        width: 50%; 
     }
 
     &-timestamp {
         color: map-get( $colors, 'secondary' ); 
-        display: block;
-        text-align: right;
         margin-bottom: map-get( $layout, 'spacing' );
         font-size: map-get( $text, 'size' ); 
+        width: 50%; 
+        text-align: left; 
     }
 
     &--info {
-        width: 50%;
         background: map-get( $colors, 'info' );
         color: map-get( $colors, 'text-light'); 
         font-size: map-get( $text, 'size-small' );
@@ -38,6 +50,7 @@
         padding: map-get( $layout, 'spacing-large' );
         border-radius: map-get( $layout, 'border-radius' ); 
         text-align: left; 
+        width: 50%;
 
         &::after {
             content: '';
@@ -59,10 +72,10 @@
         margin: -(map-get( $layout, 'spacing-large' )); 
         margin-top: map-get( $layout, 'spacing-large' );
         padding: map-get( $layout, 'spacing-large' );
-        z-index: 1;
         color: map-get( $colors, 'text-dark' );
         font-weight: map-get( $text, 'weight' );
         font-size: map-get( $text, 'size' ); 
+        z-index: 1;
         text-align: left; 
         position: relative;
 

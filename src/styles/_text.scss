@@ -3,12 +3,12 @@ h1 {
     width: 50%;
     text-transform: uppercase;
     font-weight: map-get( $text, 'weight-x-heavy' );;
-    font-size: 30px;
+    font-size: map-get( $text, 'title-size');
     line-height: 1.2;
     text-align: center; 
 
     .small {
-        font-size: 20px;
+        font-size: map-get( $text, 'subtitle-size');
         font-weight: map-get( $text, 'weight-heavy' );
         text-transform: none; 
         margin-bottom: 10px; 
@@ -16,7 +16,19 @@ h1 {
     }
 }
 
+h2 {
+    text-transform: uppercase;  
+    color: map-get( $colors, 'primary-dark'); 
+    font-weight: map-get( $text, 'weight-x-heavy'); 
+    font-size: map-get( $text, 'title-size' ); 
+    margin: map-get( $layout, 'spacing-large' ) 0 0 0; 
+}
+
 a {
     text-decoration: none; 
     color: map-get( $colors, 'link' ); 
+
+    &:hover {
+        color: map-get( $colors, 'link-hover'); 
+    }
 }

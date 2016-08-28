@@ -1,16 +1,18 @@
 footer {
     color: map-get( $colors, 'text-light' );
     font-size: map-get( $text, 'size' );
-    font-weight: map-get( $text, 'weight-heavy' );
+    font-weight: map-get( $text, 'weight' );
     background: map-get( $colors, 'primary-dark' );
     width: 100%;
     padding: map-get( $layout, 'spacing-large') 200px;
     margin-top: map-get( $layout, 'spacing-large');
     display: flex; 
-
+    border-top: map-get( $layout, 'spacing') solid map-get( $colors, 'highlight' ); 
 }
 
 .Footer-section {
 	width: 50%; 
 	padding: map-get( $layout, 'spacing' ); 
+    display: flex; 
+    flex-direction: column; 
 }

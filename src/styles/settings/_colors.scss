@@ -1,0 +1,25 @@
+$colors: (
+
+	'background': #ecf0f1,
+
+	'primary': #34495e, 
+	'primary-dark': #2c3e50, 
+	'secondary': #bdc3c7,
+	'highlight': map-get( $woact, map-get( $woact, 'current' ) ),
+	'highlight-light': map-get( $woact, map-get( $woact, 'current' ) + '-light' ),
+
+	'action': #2c3e50, 
+	'action-hover': #34495e, 
+
+	'info': #2c3e50,
+
+	'link': map-get( $woact, map-get( $woact, 'current' ) + '-light' ), 
+	'link-hover': map-get( $woact, map-get( $woact, 'current' ) ), 
+
+	'text-dark': black, 
+	'text-light': white, 
+	'textarea': white, 
+
+	'card': #34495e,
+	'card-light': white
+);
