@@ -2,7 +2,7 @@ footer {
     color: map-get( $colors, 'text-light' );
     font-size: map-get( $text, 'size' );
     font-weight: map-get( $text, 'weight' );
-    background: map-get( $colors, 'primary-dark' );
+    background: map-get( $colors, 'primary' );
     width: 100%;
     padding: map-get( $layout, 'spacing-large') 200px;
     margin-top: map-get( $layout, 'spacing-large');

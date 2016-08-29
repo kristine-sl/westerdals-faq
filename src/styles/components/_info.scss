@@ -1,0 +1,37 @@
+.Info {
+    background: map-get( $colors, 'info' );
+    color: map-get( $colors, 'text-light'); 
+    font-size: map-get( $text, 'size-small' );
+    font-weight: map-get( $text, 'weight' );
+    padding: map-get( $layout, 'spacing-large' );
+    text-align: left; 
+    width: 50%;
+    position: relative; 
+    transition: width 1s, height 1s; 
+
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 16px 24px 16px 0;
+        border-color: transparent map-get( $colors, 'info' ) transparent transparent;
+        left: -16px;
+        top: 50%;
+        margin-top: -16px;
+        position: absolute;
+    }
+
+    &-hidden {
+        width: 10px; 
+        height: 10px; 
+
+        &::after {
+            display: none;
+        }
+
+        & p {
+            display: none; 
+        }
+    }
+}

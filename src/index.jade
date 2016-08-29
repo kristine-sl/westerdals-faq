@@ -1,33 +1,13 @@
 doctype html
 html( ng-app = 'app' )
+
     head
         title Westerdals FAQ
-        link( rel = 'stylesheet' href = 'main.css' )
-        link( rel = 'stylesheet' href = '//fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700,800,900' )
+        include views/settings/stylesheet.jade
         base( href = '/' )
-    body( ng-controller = 'QuestionsController as questionsCtrl' )
-    
-        header
-            a( href = '' ) < Gå tilbake
-            .Header-wrapper
-                h1
-                    .small Jeg har et lite spørsmål om.. 
-                    span Objektorientert programmering 1
-                p.Card.Card--info Dette er en side hvor du kan stille spørsmål under forelesningen. Alle spørsmål som stilles på denne siden er anonyme, og modereres av foreleser. Foreleser velger selv hvilke svar som skal besvares, og står fritt til å slette upassende spørsmål.
-            .Login 
-                a( href = '' ) Logg inn
-        .Navigation
 
+    body( ng-controller = 'SiteController as siteCtrl' )
+        include views/components/header.jade
         main( ui-view )
-
-        footer
-            .Footer-section
-                h3 Info 
-                p Dette er et verktøy laget for Westerdals Oslo ACT, av Alexander Tømmerås og Kristine Sundt Lorentzen. 
-                p (c) Copyright 2016 
-            .Footer-section 
-                h3 Github 
-                a( href = 'https://github.com/kristine-sl/westerdals-faq' ) Westerdals-faq
-                a( href = 'https://github.com/kristine-sl/westerdals-faq-api' ) Westerdals-faq-api
-
+        include views/components/footer.jade
         script( src = 'app.js' )

@@ -1,70 +1,67 @@
 .Card {
-    color: map-get( $colors, 'text-light' );
-    font-size: map-get( $text, 'size');
-    font-weight: map-get( $text, 'weight-heavy');
-    text-align: center; 
-    position: relative;
-    z-index: 2;
+    margin: map-get( $layout, 'spacing-large' ) + 10px; 
+    padding: map-get( $layout, 'spacing-large' );
+    background: map-get( $colors, 'card' ); 
+    width: 450px; 
+    display: flex;
+    flex-direction: column; 
+
+    &-wrapper {
+        display: inline-block;
+        margin: 0; 
+        padding: 0; 
+    }
+
+    &--clickable {
+        &:hover {
+            cursor: pointer; 
+            
+            h1, 
+            h2 {
+                display: inline-block;
+                border-bottom: 3px solid black;
+            }
+        }
+    }
 
     &-container {
         max-width: map-get( $layout, 'content-max-width' ); 
-        text-align: center; 
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    &-wrapper { 
-        margin: map-get( $layout, 'spacing-large' ); 
-        border: 3px solid map-get( $colors, 'primary' ); 
-        padding: map-get( $layout, 'spacing-large' ); 
-        border-radius: map-get( $layout, 'border-radius' ); 
-        background: map-get( $colors, 'card' ); 
-        width: 350px; 
-        display: inline-block; 
+    &-content { 
+        color: map-get( $colors, 'text-dark' );
+        font-size: map-get( $text, 'size-large');
+        font-weight: map-get( $text, 'weight-heavy');
+        text-align: center; 
+        position: relative;
+        z-index: 2;
+        width: 100%; 
+        padding: map-get( $layout, 'spacing' ); 
     }
 
     &-header {
-        margin-bottom: map-get( $layout, 'spacing' ); 
         display: flex; 
+        justify-content: center; 
         line-height: 1; 
+        width: 100%;
+        text-align: center; 
+        color: map-get( $colors, 'highlight-light' );  
     }
 
     &-remove {
-        color: map-get( $colors, 'link' ); 
         font-size: map-get( $text, 'size' ); 
         text-align: right; 
         width: 50%; 
     }
 
     &-timestamp {
-        color: map-get( $colors, 'secondary' ); 
         margin-bottom: map-get( $layout, 'spacing' );
         font-size: map-get( $text, 'size' ); 
         width: 50%; 
         text-align: left; 
-    }
-
-    &--info {
-        background: map-get( $colors, 'info' );
-        color: map-get( $colors, 'text-light'); 
-        font-size: map-get( $text, 'size-small' );
-        font-weight: map-get( $text, 'weight' );
-        padding: map-get( $layout, 'spacing-large' );
-        border-radius: map-get( $layout, 'border-radius' ); 
-        text-align: left; 
-        width: 50%;
-
-        &::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-            // border-width: 16px 24px 16px 0;
-            border-width: 16px 24px 16px 0;
-            border-color: transparent map-get( $colors, 'info' ) transparent transparent;
-            left: -16px;
-            top: 50%;
-            margin-top: -16px;
-            position: absolute;
-        }
     }
 
     &--answer {

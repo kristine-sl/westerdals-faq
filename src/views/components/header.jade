@@ -1,0 +1,11 @@
+header( ng-controller = 'HeaderController as headerCtrl' )
+    a( href = '' ) < Gå tilbake
+    .Header-wrapper
+        h1
+            .small Jeg har et lite spørsmål om.. 
+            span.Title Objektorientert programmering 1
+        .Info( ng-show = 'headerCtrl.infoAvailable' ng-class = "{ 'Info-hidden': headerCtrl.infoHidden }")
+            p {{ headerCtrl.info.questions }}
+    .Login( ng-click = 'siteCtrl.toggleLoggedIn()')
+        a( href = '' ng-show = '!siteCtrl.loggedIn') Logg inn
+        a( href = '' ng-show = 'siteCtrl.loggedIn') Logg ut

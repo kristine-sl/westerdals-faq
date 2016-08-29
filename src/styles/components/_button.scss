@@ -1,8 +1,5 @@
 button {
     border-radius: map-get( $layout, 'border-radius' );
-    font-family: 'Open Sans', Helvetica, sans-serif;
-    font-size: map-get( $text, 'size-large' );
-    color: map-get( $colors, 'text-light' );;
     padding: map-get( $layout, 'spacing-large' );
     font-weight: map-get( $text, 'weight-heavy' );
     cursor: pointer;
@@ -12,6 +9,11 @@ button {
     float: right;
     border: 0;
     background: map-get( $colors, 'action' ); 
+
+    h2 {
+        margin: 0; 
+        color: map-get( $colors, 'text-light' ); 
+    }
 
     .technology & {
         background: map-get( $woact, 'technology' );

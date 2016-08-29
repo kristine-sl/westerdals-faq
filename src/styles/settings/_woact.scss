@@ -1,19 +1,32 @@
 $woact: (
 
-	'management': #875389, 
-	'management-light': #E4C6E6,
+	management: #875389, 
+	management-light: #E4C6E6,
+	management-active: #9B729B,
 
-	'technology': #42B2CC, 
-	'technology-light': #B6E9F1, 
+	technology: #42B2CC, 
+	technology-light: #B6E9F1, 
+	technology-active: #74C5DA, 
 
-	'arts': #63CC9C, 
-	'arts-light': #D8F0E3, 
+	arts: #63CC9C, 
+	arts-light: #D8F0E3, 
+	arts-active: #97D9B5, 
 
-	'communication': #FFD352, 
-	'communication-light': #FFF5B7, 
+	communication: #FFE28C, 
+	communication-light: #FFF5B7, 
+	communication-active: #FFEE93, 
 
-	'film_tv': #FF5A57,
-	'film_tv-light': #FFD2BC, 
+	film_tv_games: #FF5A57,
+	film_tv_games-light: #FFD2BC, 
+	film_tv_games-active: #FF7E79, 
 
-	'current': 'management'
+	other: #CE0039, 
+	other-light: #FFC8D4, 
+	other-active: #DE5370, 
+
+	none: white, 
+	none-light: white, 
+	none-active: white,
+
+	current: 'management'
 );

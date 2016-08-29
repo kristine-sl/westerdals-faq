@@ -1,0 +1,43 @@
+.Faculty {
+	padding: 50px 0; 
+	border: 0; 
+	border-radius: 0;
+	height: 200px;
+	display: flex; 
+	align-items: center; 
+	justify-content: center; 
+
+	&-container {
+		padding: ( map-get( $layout, 'spacing-x-large') ) 0px; 
+	}
+
+	h2 {
+		margin: 20px; 
+		text-align: center; 
+		font-size: map-get( $text, 'subtitle-size') + 6px; 
+	}
+
+	&-communication {
+		background: 5px solid map-get( $woact, 'communication' ); 
+	}
+
+	&-technology {
+		background: 5px solid map-get( $woact, 'technology' ); 
+	}
+
+	&-management {
+		background: 5px solid map-get( $woact, 'management' ); 
+	}
+
+	&-arts {
+		background: 5px solid map-get( $woact, 'arts' ); 
+	}
+
+	&-film_tv_games {
+		background: 5px solid map-get( $woact, 'film_tv_games' ); 
+	}
+
+	&-other {
+		background: 5px solid map-get( $woact, 'other' ); 
+	}
+}

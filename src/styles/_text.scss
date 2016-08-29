@@ -1,15 +1,14 @@
 h1 {
     color: map-get( $colors, 'text-light' );
     width: 50%;
-    text-transform: uppercase;
-    font-weight: map-get( $text, 'weight-x-heavy' );;
-    font-size: map-get( $text, 'title-size');
+    font-weight: map-get( $text, 'weight' );
+    font-size: map-get( $text, 'title-size' );
     line-height: 1.2;
     text-align: center; 
 
     .small {
-        font-size: map-get( $text, 'subtitle-size');
-        font-weight: map-get( $text, 'weight-heavy' );
+        font-size: map-get( $text, 'subtitle-size' );
+        font-weight: map-get( $text, 'weight' );
         text-transform: none; 
         margin-bottom: 10px; 
         color: map-get( $colors, 'secondary' ); 
@@ -17,11 +16,12 @@ h1 {
 }
 
 h2 {
-    text-transform: uppercase;  
-    color: map-get( $colors, 'primary-dark'); 
     font-weight: map-get( $text, 'weight-x-heavy'); 
-    font-size: map-get( $text, 'title-size' ); 
+    font-size: map-get( $text, 'subtitle-size' ); 
     margin: map-get( $layout, 'spacing-large' ) 0 0 0; 
+    color: map-get( $colors, 'text-dark'); 
+    letter-spacing: 1px; 
+    text-transform: uppercase;  
 }
 
 a {
@@ -29,6 +29,7 @@ a {
     color: map-get( $colors, 'link' ); 
 
     &:hover {
-        color: map-get( $colors, 'link-hover'); 
+        color: map-get( $colors, 'link-hover');
+        cursor: pointer;  
     }
 }

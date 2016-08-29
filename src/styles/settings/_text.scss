@@ -1,14 +1,17 @@
 $text: (
 
-	'size': 14px, 
-	'size-small': 13px, 
-	'size-large': 16px, 
-	'size-x-large': 18px,
+	size-small: 15px, 
+	size: 18px, 
+	size-large: 20px, 
+	size-x-large: 22px,
 
-	'weight': 400, 
-	'weight-heavy': 600, 
-	'weight-x-heavy': 800, 
+	weight: 400, 
+	weight-heavy: 600, 
+	weight-x-heavy: 800, 
 
-	'title-size': 30px, 
-	'subtitle-size': 20px 
+	title-size: 34px, 
+	subtitle-size: 22px, 
+
+	default-font: ( 'Source Sans Pro', Helvetica, sans-serif ), 
+	title-font: 'Righteous' 
 );
