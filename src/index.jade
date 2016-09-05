@@ -1,13 +1,15 @@
 doctype html
-html( ng-app = 'app' )
+html( ng-app = 'app' ng-cloak)
 
     head
-        title Westerdals FAQ
-        include views/settings/stylesheet.jade
+        title(ng-bind = '$title')
+        //title Westerdals FAQ
+        include views/imports/stylesheets.jade
         base( href = '/' )
 
     body( ng-controller = 'SiteController as siteCtrl' )
         include views/components/header.jade
         main( ui-view )
+        include views/components/info.jade
         include views/components/footer.jade
-        script( src = 'app.js' )
+        include views/imports/scripts.jade

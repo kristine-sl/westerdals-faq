@@ -2,7 +2,6 @@
 
 $current: map-get( $woact, map-get( $woact, 'current' ) ); 
 $current-light: map-get( $woact, map-get( $woact, 'current' ) + '-light' ); 
-$current-active: map-get( $woact, map-get( $woact, 'current' ) + '-active' ); 
 
 $colors: (
 

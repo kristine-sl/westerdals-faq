@@ -8,5 +8,6 @@ angular.module( 'app' )
 
         this.toggleActive = function() {
             this.active = !this.active; 
+            console.log( "hello" ); 
         }
     } );

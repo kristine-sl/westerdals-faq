@@ -8,6 +8,30 @@ footer {
     margin-top: map-get( $layout, 'spacing-large');
     display: flex; 
     border-top: map-get( $layout, 'spacing') solid map-get( $colors, 'highlight' ); 
+
+    h3 {
+        margin-top: 0;
+        
+        span {
+            display: inline-block;
+            border-bottom: 2px solid #999;
+        }
+    }
+
+    p {
+        margin-bottom: 0;
+        
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+.Footer-content {
+    display: flex;
+    flex-direction: column;
+    padding-right: 40px;
+    font-size: 15px;
 }
 
 .Footer-section {
@@ -15,4 +39,8 @@ footer {
 	padding: map-get( $layout, 'spacing' ); 
     display: flex; 
     flex-direction: column; 
+}
+
+.Footer-weak {
+    color: #999;
 }

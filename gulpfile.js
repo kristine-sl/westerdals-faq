@@ -63,6 +63,10 @@ require( 'mango-gulp' )( {
         minify: true
     },
 
+    assets: {
+        source: 'assets'
+    }, 
+
     /*
      * Notifier configuration.
      */

@@ -1,6 +1,5 @@
 h1 {
     color: map-get( $colors, 'text-light' );
-    width: 50%;
     font-weight: map-get( $text, 'weight' );
     font-size: map-get( $text, 'title-size' );
     line-height: 1.2;
@@ -27,6 +26,7 @@ h2 {
 a {
     text-decoration: none; 
     color: map-get( $colors, 'link' ); 
+    user-select: none; 
 
     &:hover {
         color: map-get( $colors, 'link-hover');

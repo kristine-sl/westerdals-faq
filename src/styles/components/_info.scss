@@ -1,37 +1,86 @@
 .Info {
-    background: map-get( $colors, 'info' );
-    color: map-get( $colors, 'text-light'); 
     font-size: map-get( $text, 'size-small' );
     font-weight: map-get( $text, 'weight' );
     padding: map-get( $layout, 'spacing-large' );
-    text-align: left; 
-    width: 50%;
-    position: relative; 
-    transition: width 1s, height 1s; 
+    transition: width 1s, height 1s;
+    width: 300px; 
+    background: white; 
+    position: fixed; 
+    right: 20px; 
+    bottom: 100px; 
+    z-index: 2; 
+    box-shadow: rgba(black, 0.05) 0px 0px 10px; 
+    border-bottom: 3px solid black; 
+    border-top: 3px solid black; 
+    transition: transform 0.2s; 
+    transform-origin: 90% 100% 0; 
 
     &::after {
         content: '';
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 16px 24px 16px 0;
-        border-color: transparent map-get( $colors, 'info' ) transparent transparent;
-        left: -16px;
-        top: 50%;
-        margin-top: -16px;
+        border-width: 16px 10px 0 10px;
+        border-color: black transparent transparent transparent;
+        bottom: -16px;
+        right: 20px;
         position: absolute;
+        z-index: 1; 
+    }
+
+    h2 {
+        margin: 0; 
+        text-align: center; 
+    }
+
+    &-ask {
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+
+        a, 
+        p {
+           margin: 0; 
+        }
+
+        a {
+            color: map-get( $woact, 'other' ); 
+
+            &:hover {
+                color: map-get( $woact, 'other-light' ); 
+            }
+        }
     }
 
     &-hidden {
-        width: 10px; 
-        height: 10px; 
+        transform: scale( 0.0 ); 
+    }
 
-        &::after {
-            display: none;
+    &-button {
+        user-select: none; 
+        cursor: pointer;
+        position: fixed; 
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background: white;
+        color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: map-get( $layout, 'spacing-large'); 
+        right: map-get( $layout, 'spacing-large');
+        transition: color 0.1s, transform 0.1s;
+        box-shadow: rgba(black, 0.05) 0px 0px 10px;
+
+        &:hover {
+            color: map-get($woact, 'other');
+            transform: scale(1.1);
         }
 
-        & p {
-            display: none; 
+        &-text {
+            font-size: 32px;
+            font-weight: 800;
         }
     }
 }

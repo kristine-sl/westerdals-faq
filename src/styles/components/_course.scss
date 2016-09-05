@@ -1,7 +1,7 @@
 .Course {
 
 	cursor: pointer; 
-	height: 200px; 
+	height: 220px;
 
 	&-header {
 		height: 80px;  
@@ -25,8 +25,8 @@
 	}
 
 	h2 {
-		margin-bottom: map-get( $layout, 'spacing-large' );
-		border-bottom: 3px solid transparent; 
+		margin: 0 map-get( $layout, 'spacing-large' ); 
+		//margin-bottom: map-get( $layout, 'spacing-large' );
 		white-space: pre-wrap; 
 	}
 

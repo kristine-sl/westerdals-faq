@@ -1,4 +1,5 @@
 .Login {
-
-	// TODO: Align right 
+	position: absolute; 
+	top: map-get( $layout, 'spacing-large'); 
+	right: map-get( $layout, 'spacing-x-large');  
 }

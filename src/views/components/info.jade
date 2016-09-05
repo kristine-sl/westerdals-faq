@@ -1,0 +1,8 @@
+.Info-button( ng-click = 'siteCtrl.toggleInfoActive() ' ) 
+    .Info-button-text ?
+.Info( ng-class = "{ 'Info-hidden': !siteCtrl.infoActive }" )
+    h2.Info-header Info
+    p.Info-content {{ siteCtrl.info.questions }}
+    .Info-ask 
+        p Lurer du fortsatt på noe?
+        a Gå hit for spørre! 

@@ -5,7 +5,9 @@
 	height: 200px;
 	display: flex; 
 	align-items: center; 
-	justify-content: center; 
+	justify-content: center;
+	width: 350px; 
+	margin: map-get( $layout, 'spacing' );  
 
 	&-container {
 		padding: ( map-get( $layout, 'spacing-x-large') ) 0px; 
