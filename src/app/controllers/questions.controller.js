@@ -10,8 +10,6 @@ angular.module( 'app' )
         } );
 
         vm.getQuestions = function() {
-            console.log( vm.questions );   
-
             if( $location.path() === '/faq') {
                 // Special case because it does not contain a faculty in the URL.
                 // TODO: Implement when getting actual data from actual API 
@@ -21,11 +19,9 @@ angular.module( 'app' )
         }
 
         vm.submit = function () {
-            $http.post( 'http://faq.flugg.space/questions', {
-                text: vm.newQuestion
-            } ).then( function ( results ) {
+            Question.post(vm.newQuestion).then(function() {
                 vm.newQuestion = '';
-            } );
+            });
         }
 
         var client = new Pusher( 'd0d79ccf9c37e11d0f25', {
