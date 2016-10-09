@@ -1,0 +1,12 @@
+$faculties: ( 'management', 'technology', 'arts', 'communication', 'film_tv_games', 'other', 'none' );
+
+@mixin faculty-color($property: 'background-color', $light: false, $diffusion: 0%, $mixColor: white ) {
+    @each $faculty in $faculties {
+        .#{$faculty} & {
+            #{$property}: mix( 
+                $mixColor, 
+                map-get($woact, if( $light, $faculty + '-light', $faculty ) ), 
+                $diffusion );
+        }
+    }
+}

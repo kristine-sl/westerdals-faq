@@ -5,7 +5,7 @@ $current-light: map-get( $woact, map-get( $woact, 'current' ) + '-light' );
 
 $colors: (
 
-	background: mix( #ececec, $current, 90% ),
+	background: mix( #ececec, $current, 95% ),
 	primary: #282830, 
 	highlight: $current,
 	highlight-light: $current-light, 
@@ -17,6 +17,7 @@ $colors: (
 $colors: map-merge( $colors, ( 
 
 	secondary: mix( map-get( $colors, 'primary' ), white, 50% ),
+	secondary-light: mix( map-get( $colors, 'primary' ), white, 15% ),
 	info: mix( map-get( $colors, 'primary' ), white, 90% ), 
 	link: map-get( $colors, 'highlight-light' ),
 	link-hover: map-get( $colors, 'highlight' ), 

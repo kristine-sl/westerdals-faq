@@ -1,0 +1,2 @@
+.Logo( ng-controller = 'LogoController as logoCtrl' ng-mouseenter = 'logoCtrl.animateLogo()', ng-mouseleave = 'logoCtrl.resetLogo()' ui-sref = 'home' )
+    image( ng-src = ' {{ logoCtrl.getSource( colorKey ) }}')

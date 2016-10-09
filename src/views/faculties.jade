@@ -1,24 +1,4 @@
-.Card-container.Faculty-container
-	.Card.Card--clickable.Faculty.Faculty-communication  
+.Card-container.Faculty-container( ng-controller = 'FacultiesController as facultiesCtrl')
+	.Card.Card--clickable.Faculty.Faculty-communication( ng-repeat = 'faculty in facultiesCtrl.faculties' ng-class = " { '{{ 'Faculty-' +  faculty.faculty }}': true } " ui-sref = 'faculty.show( { faculty: faculty.faculty } )')
 		.Card-header
-			h2 Kommunikasjon 
-
-	.Card.Card--clickable.Faculty.Faculty-technology  
-		.Card-header
-			h2 Teknologi 
-
-	.Card.Card--clickable.Faculty.Faculty-management  
-		.Card-header
-			h2 Ledelse 
-
-	.Card.Card--clickable.Faculty.Faculty-arts  
-		.Card-header
-			h2 Kunst 
-
-	.Card.Card--clickable.Faculty.Faculty-film_tv_games   
-		.Card-header
-			h2 Film, TV og Spill
-
-	.Card.Card--clickable.Faculty.Faculty-other   
-		.Card-header
-			h2 Spørsmål? 
+			h2 {{ faculty.name }} 

@@ -1,0 +1,10 @@
+a {
+    text-decoration: none; 
+    @include faculty-color( 'color', true );
+    user-select: none; 
+
+    &:hover {
+        @include faculty-color( 'color' ); 
+        cursor: pointer;  
+    }
+}

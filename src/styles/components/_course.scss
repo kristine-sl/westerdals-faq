@@ -3,6 +3,10 @@
 	cursor: pointer; 
 	height: 220px;
 
+	&-toggle {
+		margin-bottom: 20px; 
+	}
+
 	&-header {
 		height: 80px;  
 		display: flex; 
@@ -12,11 +16,8 @@
 	&-container {
 		display: flex; 
 		flex-direction: column; 
-		align-items: center; 
-
-		button {
-			width: 200px; 
-		}
+		align-items: center;
+		margin-top: 40px;  
 	}
 
 	strong {

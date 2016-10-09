@@ -1,0 +1,15 @@
+h1 {
+    color: map-get( $colors, 'text-light' );
+    font-weight: map-get( $text, 'weight' );
+    font-size: map-get( $text, 'title-size' );
+    line-height: 1.2;
+    text-align: center; 
+
+    .small {
+        font-size: map-get( $text, 'subtitle-size' );
+        font-weight: map-get( $text, 'weight' );
+        text-transform: none; 
+        margin-bottom: 10px; 
+        color: map-get( $colors, 'secondary' ); 
+    }
+}

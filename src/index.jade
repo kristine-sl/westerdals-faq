@@ -1,13 +1,13 @@
 doctype html
-html( ng-app = 'app' ng-cloak)
+html( ng-app = 'app' ng-cloak ng-class = " colorKey ")
 
     head
-        title(ng-bind = '$title')
-        //title Westerdals FAQ
+        title Westerdals FAQ v 2.0
         include views/imports/stylesheets.jade
         base( href = '/' )
 
-    body( ng-controller = 'SiteController as siteCtrl' )
+    body( ng-controller = 'SiteController as siteCtrl')
+        //- include views/components/navigation.jade
         include views/components/header.jade
         main( ui-view )
         include views/components/info.jade

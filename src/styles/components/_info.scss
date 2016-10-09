@@ -3,7 +3,7 @@
     font-weight: map-get( $text, 'weight' );
     padding: map-get( $layout, 'spacing-large' );
     transition: width 1s, height 1s;
-    width: 300px; 
+    width: 350px; 
     background: white; 
     position: fixed; 
     right: 20px; 
@@ -44,10 +44,10 @@
         }
 
         a {
-            color: map-get( $woact, 'other' ); 
+            color: map-get( $woact, 'other' ) !important; 
 
             &:hover {
-                color: map-get( $woact, 'other-light' ); 
+                color: map-get( $woact, 'other-light' ) !important; 
             }
         }
     }
@@ -81,6 +81,21 @@
         &-text {
             font-size: 32px;
             font-weight: 800;
+        }
+
+        &--add {
+            font-size: 36px;
+            fint-weight: 900;
+            height: 48px;
+            width: 48px;
+            position: absolute; 
+            bottom: -12px; 
+            right: -12px;
+            z-index: 2;
+
+            &:hover {
+                color: map-get( $colors, 'highlight' ); 
+            }
         }
     }
 }

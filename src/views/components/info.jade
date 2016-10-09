@@ -1,8 +1,9 @@
-.Info-button( ng-click = 'siteCtrl.toggleInfoActive() ' ) 
-    .Info-button-text ?
-.Info( ng-class = "{ 'Info-hidden': !siteCtrl.infoActive }" )
-    h2.Info-header Info
-    p.Info-content {{ siteCtrl.info.questions }}
-    .Info-ask 
-        p Lurer du fortsatt på noe?
-        a Gå hit for spørre! 
+div( ng-controller = 'InfoController as infoCtrl' ng-hide = '!infoCtrl.info')
+    .Info-button( ng-click = 'infoCtrl.toggleInfoActive() ' ) 
+        .Info-button-text ?
+    .Info( ng-class = "{ 'Info-hidden': !infoCtrl.infoActive }" )
+        h2.Info-header Info
+        p.Info-content {{ infoCtrl.info }}
+        //- .Info-ask 
+        //-     p Lurer du fortsatt på noe?
+        //-     a( href = '/faq') Gå hit for spørre! 

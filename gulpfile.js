@@ -52,7 +52,7 @@ require( 'mango-gulp' )( {
      */
     sass: {
         source: 'styles',
-        minify: true,
+        minify: false,
         revise: true
     },
 
@@ -62,6 +62,10 @@ require( 'mango-gulp' )( {
     html: {
         minify: true
     },
+
+    /*
+     * Asset configuration  
+     */
 
     assets: {
         source: 'assets'

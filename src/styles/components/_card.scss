@@ -1,10 +1,22 @@
 .Card {
     margin: map-get( $layout, 'spacing-large' ) + 10px; 
     padding: map-get( $layout, 'spacing-large' );
-    background: map-get( $colors, 'card' ); 
+    @include faculty-color('background');
     width: 450px; 
     display: flex;
     flex-direction: column; 
+    position: relative;
+
+    &-decorate {
+        position: absolute; 
+        right: 45px; 
+        top: 50px; 
+        line-height: 0; 
+        font-size: 120px; 
+        font-weight: 800; 
+        color: mix(transparent, white, 90%);
+
+    }
 
     &-wrapper {
         display: inline-block;
@@ -37,6 +49,10 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+
+        &--courses {
+            margin-top: 20px; 
+        }
     }
 
     &-content { 
@@ -56,23 +72,30 @@
         line-height: 1; 
         width: 100%;
         text-align: center; 
-        color: map-get( $colors, 'highlight-light' );  
+        @include faculty-color('color', true);
+
     }
 
     &-remove {
         font-size: map-get( $text, 'size' ); 
         text-align: right; 
-        width: 50%; 
+        width: 50%;
+        z-index: 1; 
+
+        &:hover {
+            @include faculty-color('color');
+            cursor: map-get( $colors, 'text-light'); 
+        }
     }
 
     &-timestamp {
         margin-bottom: map-get( $layout, 'spacing' );
         font-size: map-get( $text, 'size' ); 
-        width: 50%; 
+        width: 100%; 
         text-align: left; 
     }
 
-    &--answer {
+    &-answer {
         background: map-get( $colors, 'card-light' ); 
         margin: -(map-get( $layout, 'spacing-large' )); 
         margin-top: map-get( $layout, 'spacing-large' );
@@ -81,29 +104,104 @@
         font-weight: map-get( $text, 'weight' );
         font-size: map-get( $text, 'size' ); 
         z-index: 1;
-        text-align: left; 
         position: relative;
 
-        &::after {
-            content: '';
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 12px 16px 12px;
-            border-color: transparent transparent white transparent;
-            left: 5%;
-            top: -16px;
-            position: absolute;
+        textarea {
+            border: 1px solid map-get( $colors, 'background' ); 
+            margin: 0; 
+            font-size: map-get( $text, 'size-small'); 
+        }
+        
+        &--edit {
+            display: block; 
+            float: right; 
+            margin: 0 0 20px 20px;
+
+            &:hover {
+                @include faculty-color('color');
+                cursor: pointer; 
+            }
+        }
+
+        &--submit {
+            padding: 10px; 
+            width: 150px !important; 
+            margin-right: 10px; 
+
+            h2{
+                font-size: map-get( $text, 'size-small' ); 
+                margin: 0; 
+            }
+        }
+
+        &--display {   
+            text-align: left; 
+            
+            &::after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 0 12px 16px 12px;
+                border-color: transparent transparent white transparent;
+                left: 5%;
+                top: -16px;
+                position: absolute;
+            }
+        }
+
+        &--give {
+            width: 88%; 
+            margin: -30px auto 0 auto;
+            padding: 20px; 
+            background: mix( map-get( $colors, 'highlight-light' ), white, 50% ); //TODO
+
+            p {
+                display: inline-block; 
+                margin: 0; 
+                font-weight: map-get( $text, 'weight-heavy'); 
+                border-bottom: 2px solid transparent; 
+                font-size: map-get( $text, 'size-small' ); 
+                // color: map-get( $colors, 'secondary' ); 
+                user-select: none; 
+            }
+
+            &:hover {
+                cursor: pointer; 
+
+                p {
+                    color: map-get( $colors, 'text-dark' ); 
+                }
+            }  
         }
     }
 
     &--admin {
         align-items: center; 
-        justify-content: center; 
+        justify-content: center;
         padding: 40px; 
 
         h2 {
             margin: 0; 
         }
+    }
+
+    &-none {
+
+        margin: map-get( $layout, 'spacing-xx-large' );
+        width: 500px; 
+        text-align: center; 
+
+        h2 {
+            font-size: 27px; 
+            color: map-get( $colors, 'primary' ); 
+        }
+
+        p { 
+            color: map-get( $colors, 'secondary'); 
+            font-weight: 600; 
+            font-size: 20px; 
+        }
+
     }
 }

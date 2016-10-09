@@ -6,10 +6,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: map-get( $colors, 'background' );
     font-family: map-get( $text, 'default-font' ); 
     line-height: 1.75;
     margin: 0;
+
+    @include faculty-color('background-color', false, 90%, #ececec);
 }
 
 main {

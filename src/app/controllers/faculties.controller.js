@@ -1,8 +1,10 @@
 /* eslint-disable */
 angular.module( 'app' )
-    .controller( 'FacultiesController', function ( $rootScope ) {
+    .controller( 'FacultiesController', function ( $rootScope, Faculty ) {
 
-        $rootScope.info = 'faculties'; 
+        var vm = this; 
 
-        console.log( 123 ); 
+        $rootScope.info = 'faculties';
+
+        vm.faculties = Faculty.faculties; 
     } ); 

@@ -1,6 +1,7 @@
 // Must be imported first because it is used by the other sass files 
-@import 'settings';
+@import 'imports/settings';
+@import 'imports/mixins';
 
 @import 'base'; 
-@import 'components'; 
-@import 'text';
+@import 'imports/components'; 
+@import 'imports/text';

@@ -1,0 +1,60 @@
+.Input {
+    background: white; 
+    padding: 10px;
+    box-shadow: rgba(black, 0.05) 0px 0px 10px; 
+    margin: 20px;
+    display: flex; 
+    flex-direction: column; 
+    position: relative; 
+
+    &-decorate {
+        font-size: 120px; 
+        font-weight: 800;  
+        position: absolute; 
+        right: 0; 
+        top: 0; 
+        line-height: 1;
+        color: mix( map-get( $colors, 'primary' ), transparent, 5% );  
+        margin-right: 40px; 
+        pointer-events: none; 
+    }
+
+    &.Input-active {
+        padding: 20px; 
+
+        .Input-decorate {
+            margin-top: 10px; 
+        }
+    }
+
+    textarea {
+        border: 1px solid map-get( $colors, 'secondary-light' );
+        box-shadow: inset 0px 0px 20px rgba(black, 0.03); 
+    }
+
+    &-submit {
+        display: none;
+        transition: display 0.2s; 
+        width: 40%;
+        align-self: flex-end; 
+        margin-right: 20px; 
+
+        &.Input-active {
+            display: block; 
+        }
+    }
+
+    &--question {
+
+        textarea {
+            width: 500px; 
+            height: 100px;
+            padding: auto; 
+
+            &.Input-active {
+                width: 600px; 
+                height: 150px; 
+            }
+        }
+    }
+}

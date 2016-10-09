@@ -12,6 +12,8 @@ header {
     background: map-get( $colors, 'primary' ); 
     padding: map-get( $layout, 'spacing-large') 0 0px 0;
     width: 100%; 
-    border-bottom: map-get( $layout, 'spacing') solid map-get( $colors, 'highlight' ); 
+    border-bottom-style: solid;
+    border-bottom-width: map-get( $layout, 'spacing'); 
+    @include faculty-color('border-color');
     position: relative; 
 }

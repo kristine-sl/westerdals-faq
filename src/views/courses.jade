@@ -1,34 +1,13 @@
-h3 Fag under Teknologiavdelingen
-.Card-container 
-	.Card-wrapper
-		.Card.Card--clickable.Course
+.Card-container.Card-container--courses( ng-controller = 'CoursesController as coursesCtrl' )
+	.Card-wrapper( ng-repeat = 'course in coursesCtrl.courses')
+		.Card.Card--clickable.Course( ui-sref = "faculty.course( { faculty: siteCtrl.getFaculty(), course: 'a' } )")
 			.Card-header.Course-header
-				h2 Objektorientert programmering 1 
+				h2 {{ course }}
 			.Card-content
 				p Det har kommet inn 
 					strong 10
 					| spørsmål til dette faget 
-	.Card-wrapper
-		.Card.Card--clickable.Course
-			.Card-header.Course-header
-				h2 Interaktivt design 2
-			.Card-content
-				p Det har kommet inn 
-					strong 20 
-					| spørsmål til dette faget 
-	.Card-wrapper
-		.Card.Card--clickable.Course
-			.Card-header.Course-header
-				h2 Mobil apputvikling 3 
-			.Card-content
-				p Det har kommet inn 
-					strong 30
-					| spørsmål til dette faget 
-	.Card-wrapper
-		.Card.Card--clickable.Course
-			.Card-header.Course-header
-				h2 Sceneskrekk 666 
-			.Card-content
-				p Det har kommet inn 
-					strong 40
-					| spørsmål til dette faget
+	.Card-none( ng-show = ' coursesCtrl.courses.length === 0 ' )
+		h2 Det er desverre ingen fag her 
+		p( ng-show = ' !siteCtrl.loggedIn ') Om du ønsker å bruke denne tjenesten anbefaler vi deg å ta kontakt med din foreleser og sier fra! :)
+		p( ng-show = ' siteCtrl.loggedIn ') Om du ønsker å opprette et for ditt fag, så kan du gjøre det ved å trykke på "Registrer nytt fag" på Din Side

@@ -1,0 +1,10 @@
+.Card-wrapper
+    .Card 
+        .Card-decorate ?
+        .Card-header
+            span.Card-timestamp for 3 timer siden 
+            span.Card-remove( ng-show = 'siteCtrl.loggedIn' ) ✕
+        .Card-content Testing? 
+        .Card-answer.Card-answer--display( ng-show = 'true' )
+            span.Card-answer--edit.icon-pencil( ng-show = 'siteCtrl.loggedIn' )
+            | Vivamus tempus varius nisi. Sed efficitur sapien sit amet arcu porta, et semper nisi tempus. 

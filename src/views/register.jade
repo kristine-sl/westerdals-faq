@@ -1,0 +1,17 @@
+.Registration 
+    .Registration-container 
+        .Registration-options
+            .Registration-option( ui-sref = 'registerEmployee')
+                h2 Ansatt
+                .Registration-icon-container
+                    .Registration-icon--board
+                    .Registration-icon--stick
+                    .icon-user.Registration-icon.Registration-icon--user
+            .Registration-option( ui-sref = 'registerStudent')
+                h2 Student 
+                .Registration-icon-container
+                    .icon-graduation-cap.Registration-icon.Registration-icon--cap
+                    .icon-user.Registration-icon.Registration-icon--user
+        .Redirect
+            p Har du allerede registrert deg? 
+            a( ui-sref = 'login') Logg inn

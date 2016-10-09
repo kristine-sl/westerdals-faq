@@ -20,26 +20,26 @@
 	}
 
 	&-communication {
-		background: 5px solid map-get( $woact, 'communication' ); 
+		background: map-get( $woact, 'communication' ) !important; 
 	}
 
 	&-technology {
-		background: 5px solid map-get( $woact, 'technology' ); 
+		background: map-get( $woact, 'technology' ) !important; 
 	}
 
 	&-management {
-		background: 5px solid map-get( $woact, 'management' ); 
+		background: map-get( $woact, 'management' ) !important; 
 	}
 
 	&-arts {
-		background: 5px solid map-get( $woact, 'arts' ); 
+		background: map-get( $woact, 'arts' ) !important; 
 	}
 
 	&-film_tv_games {
-		background: 5px solid map-get( $woact, 'film_tv_games' ); 
+		background: map-get( $woact, 'film_tv_games' ) !important; 
 	}
 
 	&-other {
-		background: 5px solid map-get( $woact, 'other' ); 
+		background: map-get( $woact, 'other' ) !important; 
 	}
 }

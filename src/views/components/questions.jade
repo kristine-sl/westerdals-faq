@@ -1,13 +1,7 @@
-.Questions-wrapper( ng-controller = 'QuestionsController as questionsCtrl' )
-    form( ng-submit = 'questionsCtrl.submit()' ng-hide = 'true')
-        textarea( ng-model = 'questionsCtrl.newQuestion' placeholder = 'Skriv inn ditt spørsmål...' )
-        button( type = 'submit' ) Send inn
-        
+.Question-wrapper( ng-controller = 'QuestionsController as questionsCtrl' )
+    include questions_input.jade
+    include search.jade
     .Card-container
-        .Card-wrapper( ng-repeat = "question in questionsCtrl.questions | orderBy: '-created_at' " )
-            .Card 
-                .Card-header
-                    span.Card-timestamp( am-time-ago = 'question.created_at' )
-                    span.Card-remove ✕
-                .Card-content {{ question.text }}
-                .Card--answer ( ng-show = 'question.answer' ) {{ question.answer }}
+        //- include questions_example.jade
+        .Card-wrapper( ng-repeat = "question in questionsCtrl.getQuestions() | orderBy: '-created_at' " )
+            include questions_card.jade

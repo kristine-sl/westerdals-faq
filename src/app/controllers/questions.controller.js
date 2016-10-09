@@ -1,12 +1,24 @@
 /* eslint-disable */
 angular.module( 'app' )
-    .controller( 'QuestionsController', function ( $http, $pusher ) {
+    .controller( 'QuestionsController', function ( $http, $pusher, $location, Question ) {
+
         var vm = this;
         vm.newQuestion = '';
 
-        $http.get( 'http://faq.flugg.space/questions' ).then( function ( results ) {
-            vm.questions = results.data;
+        Question.all().then( function ( questions ) {
+            vm.questions = questions;
         } );
+
+        vm.getQuestions = function() {
+            console.log( vm.questions );   
+
+            if( $location.path() === '/faq') {
+                // Special case because it does not contain a faculty in the URL.
+                // TODO: Implement when getting actual data from actual API 
+            }
+
+            return vm.questions; 
+        }
 
         vm.submit = function () {
             $http.post( 'http://faq.flugg.space/questions', {
@@ -41,4 +53,10 @@ angular.module( 'app' )
                 }
             }
         } );
+
+        vm.inputActive = false; 
+
+        vm.toggleInputActive = function() {
+            vm.inputActive = !vm.inputActive; 
+        }
     } );

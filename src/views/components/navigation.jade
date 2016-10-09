@@ -1,0 +1,7 @@
+.Navigation( ng-controller = 'NavigationController as navigationCtrl' )
+    .Navigation-icon( ng-click = 'navigationCtrl.toggleOpen()' ng-class = "{ 'Navigation-icon--open': navigationCtrl.open }")
+        span
+        span
+        span
+        span
+    .Navigation-menu( ng-class = "{ 'Navigation-menu--open': navigationCtrl.open}" )

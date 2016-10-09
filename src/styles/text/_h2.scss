@@ -1,0 +1,8 @@
+h2 {
+    font-weight: map-get( $text, 'weight-x-heavy'); 
+    font-size: map-get( $text, 'subtitle-size' ); 
+    margin: map-get( $layout, 'spacing-large' ) 0 0 0; 
+    color: map-get( $colors, 'text-dark'); 
+    letter-spacing: 1px; 
+    text-transform: uppercase;  
+}

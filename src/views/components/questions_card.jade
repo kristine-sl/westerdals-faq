@@ -1,0 +1,16 @@
+.Card 
+    .Card-decorate ?
+    .Info-button.Info-button--add( ng-click = 'courseCtrl.toggleAnswering()' ng-show = '!question.answer && siteCtrl.loggedIn && !courseCtrl.answering') +
+    .Card-header
+        span.Card-timestamp( am-time-ago = 'question.created_at' )
+        span.Card-remove( ng-show = 'siteCtrl.loggedIn' ) ✕
+    .Card-content {{ question.description }}
+    .Card-answer.Card-answer--display( ng-show = 'siteCtrl.loggedIn && !question.answer && courseCtrl.answering' )
+        textarea( ng-model = 'questionsCtrl.answerQuestion' placeholder = 'Skriv inn ditt svar her...')
+        button.Card-answer--submit( type = 'submit' ng-click = 'courseCtrl.toggleAnswering()' )
+            h2 Send inn 
+    .Card-answer.Card-answer--display( ng-show = 'question.answer' )
+        span.Card-answer--edit.icon-pencil( ng-show = 'siteCtrl.loggedIn' ) 
+        | Vivamus tempus varius nisi. Sed efficitur sapien sit amet arcu porta, et semper nisi tempus. 
+  //.Card-answer.Card-answer--give( ng-show = '!courseCtrl.answering && !question.answer && siteCtrl.loggedIn' ng-click = 'courseCtrl.toggleAnswering()') 
+    p Legg inn et svar...

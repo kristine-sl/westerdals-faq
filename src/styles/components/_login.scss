@@ -1,5 +1,34 @@
 .Login {
-	position: absolute; 
-	top: map-get( $layout, 'spacing-large'); 
-	right: map-get( $layout, 'spacing-x-large');  
+    display: flex;
+    margin: 40px; 
+    background: white; 
+    box-shadow: rgba(black, 0.05) 0px 0px 10px; 
+
+    h2 {
+        margin: 0;
+    }
+
+    &-link {
+    	position: absolute; 
+    	bottom: map-get( $layout, 'spacing-large'); 
+    	right: map-get( $layout, 'spacing-x-large');  
+        color: black; 
+    }
+
+    &-form {
+        box-shadow: none; 
+
+        textarea {
+            width: 400px; 
+            margin-left: 10px;
+            margin-bottom: 10px; 
+            padding: 30px;
+            line-height: 0; 
+        }
+
+        .Input-submit {
+            display: block; 
+            width: 50%; 
+        }
+    }
 }

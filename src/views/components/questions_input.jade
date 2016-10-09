@@ -1,0 +1,5 @@
+form.Input.Input--question( ng-submit = 'questionsCtrl.submit()' ng-show = 'courseCtrl.approved && courseCtrl.active && !siteCtrl.loggedIn' ng-class = "{ 'Input-active': questionsCtrl.inputActive }")
+    .Input-decorate ?
+    textarea( ng-model = 'questionsCtrl.newQuestion' placeholder = 'Skriv inn ditt spørsmål...' ng-click = 'questionsCtrl.toggleInputActive()' ng-class = "{ 'Input-active': questionsCtrl.inputActive }")
+    button.Input-submit( type = 'submit' ng-class = "{ 'Input-active': questionsCtrl.inputActive }" ) 
+        h2 Send inn

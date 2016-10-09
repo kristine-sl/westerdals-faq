@@ -7,7 +7,9 @@ footer {
     padding: map-get( $layout, 'spacing-large') 200px;
     margin-top: map-get( $layout, 'spacing-large');
     display: flex; 
-    border-top: map-get( $layout, 'spacing') solid map-get( $colors, 'highlight' ); 
+    border-top-style: solid; 
+    border-top-width: map-get( $layout, 'spacing');
+    @include faculty-color('border-color');
 
     h3 {
         margin-top: 0;
