@@ -7,5 +7,5 @@ header
 			span.Title Objektorientert programmering 1
 
 	.Login-link
-		a( ng-show = '!siteCtrl.loggedIn' ui-sref = 'login' ) Logg inn
-		a( ng-show = 'siteCtrl.loggedIn' ng-click = 'siteCtrl.logOut()' ) Logg ut
+		a( ng-if = '! siteCtrl.auth.isLoggedIn()' ui-sref = 'login' ) Logg inn
+		a( ng-if = 'siteCtrl.auth.isLoggedIn()' ng-click = 'siteCtrl.logOut()' ) Logg ut

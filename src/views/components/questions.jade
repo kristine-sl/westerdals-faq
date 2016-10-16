@@ -3,5 +3,5 @@
     include search.jade
     .Card-container
         //- include questions_example.jade
-        .Card-wrapper( ng-repeat = "question in questionsCtrl.getQuestions() | orderBy: '-created_at' " )
+        .Card-wrapper( ng-repeat = "question in questionsCtrl.getQuestions() | orderBy: '-createdAt' " )
             include questions_card.jade

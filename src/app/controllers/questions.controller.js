@@ -19,8 +19,12 @@ angular.module( 'app' )
         }
 
         vm.submit = function () {
-            Question.post(vm.newQuestion).then(function() {
+            Question.post({
+                description: vm.newQuestion,
+                lecture_id: 1
+            }).then(function(question) {
                 vm.newQuestion = '';
+                vm.questions.push(question);
             });
         }
 

@@ -1,10 +1,10 @@
 .Login
-    form.Login-form.Input
+    form.Login-form.Input( ng-submit = 'siteCtrl.logIn()' )
         h2 Brukernavn 
-        textarea( placeholder = 'Skriv inn brukernavn her...' )
+        input( type = 'text' placeholder = 'Skriv inn brukernavn her...' ng-model = 'siteCtrl.credentials.email' )
         h2 Passord 
-        textarea( placeholder = 'Skriv inn passord her...' )
-        button.Input-submit( ng-click = 'siteCtrl.logIn() ' )
+        input( type = 'password' placeholder = 'Skriv inn passord her...' ng-model = 'siteCtrl.credentials.password' )
+        button.Input-submit( type = 'submit' )
             h2 Logg inn 
     .Redirect
         p Har du ikke registrert deg enda? 

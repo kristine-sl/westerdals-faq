@@ -1,27 +1,32 @@
 /* eslint-disable */
 angular.module( 'app' )
-    .controller( 'SiteController', function ( $scope, $location, Faculty ) {
+    .controller( 'SiteController', function ( $scope, $state, $location, Faculty, Authenticator ) {
 
         var vm = this;
+        vm.auth = Authenticator;
+        vm.credentials = {
+            email: '',
+            password: ''
+        };
 
         $scope.go = function( path ) {
             $location.path( path );
         }
 
-        vm.loggedIn = false;
-
         vm.logOut = function() {
-            vm.loggedIn = false; 
+            Authenticator.logout();
+            $state.go( 'home' );
         }
 
         vm.logIn = function() {
-            vm.loggedIn = true;
-            $scope.go( '/' ); 
+            Authenticator.login(vm.credentials).then(function () {
+                $state.go( 'home' );
+            });
         }
 
-        vm.color = Faculty.getCurrentFaculty(); 
+        vm.color = Faculty.getCurrentFaculty();
 
         vm.getFaculty = function() {
-            return Faculty.getCurrentFaculty(); 
+            return Faculty.getCurrentFaculty();
         }
     } );

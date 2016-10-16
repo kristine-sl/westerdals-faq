@@ -10,5 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "mango-gulp": "^1.0.64"
+  },
+  "dependencies": {
+    "laravel-echo": "^1.0.5",
+    "pusher-js": "^3.2.1"
   }
 }

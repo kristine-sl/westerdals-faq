@@ -8,8 +8,8 @@ angular.module( 'app' )
             }); 
         }
 
-        function post( question ) {
-            return $http.post( 'http://faq.flugg.space/questions', { question: question } ).then( function( response ) {
+        function post( parameters ) {
+            return $http.post( 'http://faq.flugg.space/questions', parameters ).then( function( response ) {
                 return response.data.data; 
             }); 
         }
