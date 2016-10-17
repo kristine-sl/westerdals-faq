@@ -2,10 +2,11 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     font-family: map-get( $text, 'default-font' ); 
     line-height: 1.75;
     margin: 0;
@@ -18,4 +19,20 @@ main {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
+}
+
+.page-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+    margin-bottom: -250px;
+}
+.page-wrap:after {
+    content: "";
+    display: block;
+}
+
+footer, .page-wrap:after {
+    height: 250px;
 }

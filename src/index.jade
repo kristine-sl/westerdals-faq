@@ -7,9 +7,11 @@ html( ng-app = 'app' ng-cloak ng-class = " colorKey ")
         base( href = '/' )
 
     body( ng-controller = 'SiteController as siteCtrl')
-        //- include views/components/navigation.jade
-        include views/components/header.jade
-        main( ui-view )
-        include views/components/info.jade
+        .page-wrap
+            //- include views/components/navigation.jade
+            include views/components/header.jade
+            main( ui-view )
+            include views/components/info.jade
+
         include views/components/footer.jade
         include views/imports/scripts.jade

@@ -1,13 +1,18 @@
 /* eslint-disable */
 angular.module( 'app' )
-    .controller( 'QuestionsController', function ( $http, $pusher, $location, Question ) {
+    .controller( 'QuestionsController', function ( $http, $pusher, $location, $interval, Question ) {
 
         var vm = this;
         vm.newQuestion = '';
 
-        Question.all().then( function ( questions ) {
-            vm.questions = questions;
-        } );
+        function fetchQuestions() {
+            Question.all().then( function ( questions ) {
+                vm.questions = questions || [];
+            } );
+        }
+
+        fetchQuestions();
+        $interval(fetchQuestions, 5000);
 
         vm.getQuestions = function() {
             if( $location.path() === '/faq') {
@@ -16,6 +21,12 @@ angular.module( 'app' )
             }
 
             return vm.questions; 
+        }
+
+        vm.removeQuestion = function( question ) {
+            Question.destroy( question.id ).then( function() {
+                vm.questions.splice( vm.questions.indexOf(question), 1 );
+            });
         }
 
         vm.submit = function () {

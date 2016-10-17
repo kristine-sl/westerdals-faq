@@ -1,6 +1,6 @@
 .Question-wrapper( ng-controller = 'QuestionsController as questionsCtrl' )
     include questions_input.jade
-    include search.jade
+    //include search.jade
     .Card-container
         //- include questions_example.jade
         .Card-wrapper( ng-repeat = "question in questionsCtrl.getQuestions() | orderBy: '-createdAt' " )

@@ -3,9 +3,13 @@ angular.module( 'app' )
     .service('Question', function( $http ) {
 
         function all() {
-            return $http.get( 'http://faq.flugg.space/questions' ).then( function( response ) {
-                return response.data.data; 
-            }); 
+            return $http.get('http://faq.flugg.space/questions').then(function (response) {
+                return response.data.data;
+            });
+        }
+
+        function destroy( id ) {
+            return $http.delete( 'http://faq.flugg.space/questions/' + id );
         }
 
         function post( parameters ) {
@@ -16,6 +20,7 @@ angular.module( 'app' )
 
         return {
             all: all, 
-            post: post
+            post: post,
+            destroy: destroy
         }; 
     }); 

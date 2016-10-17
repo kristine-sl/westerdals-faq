@@ -4,6 +4,7 @@ footer {
     font-weight: map-get( $text, 'weight' );
     background: map-get( $colors, 'primary' );
     width: 100%;
+    height: 250px;
     padding: map-get( $layout, 'spacing-large') 200px;
     margin-top: map-get( $layout, 'spacing-large');
     display: flex; 
